@@ -1,0 +1,49 @@
+-- Database: employee_employee
+
+-- DROP DATABASE employee_employee;
+
+CREATE DATABASE employee_employee
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Mexico.1252'
+    LC_CTYPE = 'Spanish_Mexico.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+-- Table: public.employee
+
+-- DROP TABLE public.employee;
+
+CREATE TABLE public.employee
+(
+    id integer NOT NULL,
+    first_name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    last_name character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT employee_pkey PRIMARY KEY (id, first_name, last_name)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.employee
+    OWNER to postgres;
+
+-- Table: public.employee_department
+
+-- DROP TABLE public.employee_department;
+
+CREATE TABLE public.employee_department
+(
+    id integer,
+    name character varying(255) COLLATE pg_catalog."default",
+    description character varying(255) COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.employee_department
+    OWNER to postgres;
