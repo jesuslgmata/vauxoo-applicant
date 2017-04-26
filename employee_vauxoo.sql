@@ -1,15 +1,17 @@
--- Your sql code in this file
--- NOTE: Please, don't add sentence to create database in this script file.
---       You can create database locally to test it.
---       Consider add ';' at end sentence.
+-- Table: public.employee_hobby
 
-CREATE TABLE employee (
-);
+-- DROP TABLE public.employee_hobby;
 
-CREATE TABLE employee_department (
-);
+CREATE TABLE public.employee_hobby
+(
+    id integer,
+    name character varying(255) COLLATE pg_catalog."default",
+    description character varying(255) COLLATE pg_catalog."default"
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
 
-CREATE TABLE employee_hobby (
-);
-
--- ...
+ALTER TABLE public.employee_hobby
+    OWNER to postgres;
